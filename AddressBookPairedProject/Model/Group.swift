@@ -23,6 +23,4 @@ extension Group: Equatable {
     static func == (lhs: Group, rhs: Group) -> Bool {
         lhs.id == rhs.id
     }
-    
-    
 }
