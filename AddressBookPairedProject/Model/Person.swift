@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Person {
+class Person: Encodable, Decodable {
     let id: UUID
     var name: String
     var address: String
