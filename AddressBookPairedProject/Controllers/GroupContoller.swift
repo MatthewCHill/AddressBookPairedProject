@@ -27,6 +27,8 @@ class GroupController {
     
     // MARK: - CRUD functions
     func create(name: String = "Untitled Group", people: [Person] = []) {
+        let group = Group(name: name)
+        groups.append(group)
         saveContactsToDisk()
     }
     func update(groupToUpdate: Group, newGroupName: String) {

@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ka1-Vb-Q5S" kind="show" id="ZiN-zM-1Xd"/>
+                                    <segue destination="ka1-Vb-Q5S" kind="show" identifier="toPersonTableViewController" id="ZiN-zM-1Xd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,8 +53,7 @@
                     <navigationItem key="navigationItem" title="Groups" id="NbE-IO-54a">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Azw-IC-OaC">
                             <connections>
-                                <action selector="addButtonTapped:" destination="Ie6-IC-pab" id="lCg-OE-oE6"/>
-                                <segue destination="ka1-Vb-Q5S" kind="show" id="Ysy-NG-guA"/>
+                                <action selector="addButtonTapped:" destination="Ie6-IC-pab" id="cBC-ct-msd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,7 +106,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="k6Q-4J-4cR" kind="show" id="5Y1-D6-Ljo"/>
+                                    <segue destination="k6Q-4J-4cR" kind="show" identifier="toPersonViewController" id="5Y1-D6-Ljo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,17 +116,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Pi1-2t-Epo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EZo-pK-fRy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EZo-pK-fRy">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="ka1-Vb-Q5S" id="Wqp-57-tLp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupNameTextField" destination="f3Z-01-Tff" id="Yyb-6u-Cy2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ei-9b-Dih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1907.6335877862596" y="-25.35211267605634"/>
         </scene>
-        <!--View Controller-->
+        <!--Person View Controller-->
         <scene sceneID="6DJ-pq-HPD">
             <objects>
-                <viewController id="k6Q-4J-4cR" sceneMemberID="viewController">
+                <viewController id="k6Q-4J-4cR" customClass="PersonViewController" customModule="AddressBookPairedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddL-0Y-W1l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,8 +163,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YuT-KZ-gWu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cLt-ZI-2Qy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cLt-ZI-2Qy">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="k6Q-4J-4cR" id="b35-n5-GXQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="Bke-5i-tIO" id="HEa-B6-BV6"/>
+                        <outlet property="nameTextField" destination="TA5-zb-do3" id="IbY-GE-VvG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ua-fy-Eg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,9 +197,6 @@
             <point key="canvasLocation" x="212.97709923664121" y="-25.35211267605634"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ZiN-zM-1Xd"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
