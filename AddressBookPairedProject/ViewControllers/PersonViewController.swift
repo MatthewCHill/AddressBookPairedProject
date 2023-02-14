@@ -52,6 +52,6 @@ class PersonViewController: UIViewController {
     @IBAction func favoriteButtonTapped(_ sender: Any) {
         guard let person = person else {return}
         PersonController.toggleFavorite(person: person)
-        updateViews()
+        updateFavoriteButton()
     }
 }

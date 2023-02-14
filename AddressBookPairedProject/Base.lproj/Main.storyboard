@@ -128,6 +128,9 @@
                                                     <rect key="frame" x="325" y="0.0" width="52" height="44"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonTapped:" destination="J39-eD-OPe" eventType="touchUpInside" id="HnX-YL-1te"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -207,6 +210,7 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
                                     <connections>
+                                        <action selector="favoriteButtonTapped:" destination="Geq-U2-HsD" eventType="touchUpInside" id="1SI-nb-l4p"/>
                                         <action selector="favoriteButtonTapped:" destination="k6Q-4J-4cR" eventType="touchUpInside" id="hLn-Zw-bGt"/>
                                     </connections>
                                 </button>
@@ -225,6 +229,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ua-fy-Eg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Geq-U2-HsD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2654" y="-25"/>
         </scene>

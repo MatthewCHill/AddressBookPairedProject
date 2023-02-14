@@ -7,13 +7,18 @@
 
 import UIKit
 
+protocol PersonTableViewCellDelegate: AnyObject {
+    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell)
+    
+}
+
+
 class PersonTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     var person: Person? {
         didSet {
             updateViews()
-            updateFavoriteButton()
         }
     }
     
@@ -22,6 +27,7 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var personNameLabel: UILabel!
     
     @IBOutlet weak var favoriteButton: UIButton!
+    weak var delegate: PersonTableViewCellDelegate?
     
     // MARK: - Helper Functions
     func updateViews() {
@@ -35,5 +41,9 @@ class PersonTableViewCell: UITableViewCell {
         favoriteButton.setImage(favoriteImage, for: .normal)
     }
     
-
+    // MARK: - Actions
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        delegate?.toggleFavoriteButtonWasTapped(cell: self)
+    }
+    
 }
