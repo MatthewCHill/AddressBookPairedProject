@@ -30,4 +30,9 @@ class PersonController {
         collection.people.remove(at: index)
         GroupController.sharedInstance.saveContactsToDisk()
     }
+    static func toggleFavorite(person: Person) {
+        person.isFavorite.toggle()
+        GroupController.sharedInstance.saveContactsToDisk()
+    }
+    
 }//End of class

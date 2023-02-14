@@ -74,11 +74,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DY6-z1-A6w">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DY6-z1-A6w">
                                     <rect key="frame" x="16" y="8" width="361" height="84"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3Z-01-Tff">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -91,7 +91,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clL-ew-ya5">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="clL-ew-ya5">
                                                     <rect key="frame" x="312" y="0.0" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
@@ -200,10 +200,13 @@
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="T77-v1-GWI">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="b96-AO-gCr">
-                                    <rect key="frame" x="-37" y="-17" width="87" height="33"/>
+                                    <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="favoriteButtonTapped:" destination="k6Q-4J-4cR" eventType="touchUpInside" id="hLn-Zw-bGt"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem systemItem="save" id="cLt-ZI-2Qy">
@@ -215,6 +218,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="Bke-5i-tIO" id="HEa-B6-BV6"/>
+                        <outlet property="favoriteButton" destination="b96-AO-gCr" id="Xeg-5C-5c9"/>
                         <outlet property="nameTextField" destination="TA5-zb-do3" id="IbY-GE-VvG"/>
                     </connections>
                 </viewController>
