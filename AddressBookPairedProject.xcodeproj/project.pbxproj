@@ -16,6 +16,8 @@
 		34C15DC6299AE8310036D3AA /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C15DC5299AE8310036D3AA /* Group.swift */; };
 		34C15DC9299AE9B00036D3AA /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C15DC8299AE9B00036D3AA /* PersonController.swift */; };
 		34C15DCB299AF5E60036D3AA /* GroupContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C15DCA299AF5E60036D3AA /* GroupContoller.swift */; };
+		34C15DCE299B00000036D3AA /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C15DCD299B00000036D3AA /* GroupsTableViewController.swift */; };
+		34C15DD0299B120C0036D3AA /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C15DCF299B120C0036D3AA /* PersonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		34C15DC5299AE8310036D3AA /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		34C15DC8299AE9B00036D3AA /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		34C15DCA299AF5E60036D3AA /* GroupContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupContoller.swift; sourceTree = "<group>"; };
+		34C15DCD299B00000036D3AA /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		34C15DCF299B120C0036D3AA /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		34C15DAC299ADD840036D3AA /* AddressBookPairedProject */ = {
 			isa = PBXGroup;
 			children = (
+				34C15DCC299AFF8E0036D3AA /* ViewControllers */,
 				34C15DC1299ADE3B0036D3AA /* Supporting Files */,
 				34C15DB8299ADD870036D3AA /* LaunchScreen.storyboard */,
 				34C15DB3299ADD840036D3AA /* Main.storyboard */,
@@ -98,6 +103,15 @@
 				34C15DCA299AF5E60036D3AA /* GroupContoller.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		34C15DCC299AFF8E0036D3AA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				34C15DCD299B00000036D3AA /* GroupsTableViewController.swift */,
+				34C15DCF299B120C0036D3AA /* PersonTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C15DD0299B120C0036D3AA /* PersonTableViewController.swift in Sources */,
 				34C15DAE299ADD840036D3AA /* AppDelegate.swift in Sources */,
 				34C15DC4299AE65C0036D3AA /* Person.swift in Sources */,
 				34C15DB0299ADD840036D3AA /* SceneDelegate.swift in Sources */,
 				34C15DC9299AE9B00036D3AA /* PersonController.swift in Sources */,
+				34C15DCE299B00000036D3AA /* GroupsTableViewController.swift in Sources */,
 				34C15DCB299AF5E60036D3AA /* GroupContoller.swift in Sources */,
 				34C15DC6299AE8310036D3AA /* Group.swift in Sources */,
 			);

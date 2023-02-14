@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Groups-->
         <scene sceneID="5na-fd-bcH">
             <objects>
-                <tableViewController id="Ie6-IC-pab" sceneMemberID="viewController">
+                <tableViewController id="Ie6-IC-pab" customClass="GroupsTableViewController" customModule="AddressBookPairedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bAW-06-PZt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="F5H-3w-PEM" detailTextLabel="G8z-3k-VhN" style="IBUITableViewCellStyleValue1" id="Bpv-TX-Mev">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" textLabel="F5H-3w-PEM" detailTextLabel="G8z-3k-VhN" style="IBUITableViewCellStyleValue1" id="Bpv-TX-Mev">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bpv-TX-Mev" id="XRa-Y4-h4b">
@@ -50,10 +50,11 @@
                             <outlet property="delegate" destination="Ie6-IC-pab" id="P3Y-Vo-kZX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NbE-IO-54a">
+                    <navigationItem key="navigationItem" title="Groups" id="NbE-IO-54a">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Azw-IC-OaC">
                             <connections>
-                                <segue destination="ka1-Vb-Q5S" kind="show" id="ckQ-RP-9f6"/>
+                                <action selector="addButtonTapped:" destination="Ie6-IC-pab" id="lCg-OE-oE6"/>
+                                <segue destination="ka1-Vb-Q5S" kind="show" id="Ysy-NG-guA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -62,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1139.6946564885495" y="-25.35211267605634"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Person Table View Controller-->
         <scene sceneID="51K-Mp-B99">
             <objects>
-                <tableViewController id="ka1-Vb-Q5S" sceneMemberID="viewController">
+                <tableViewController id="ka1-Vb-Q5S" customClass="PersonTableViewController" customModule="AddressBookPairedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lGy-jg-EK3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +90,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="pFU-Po-ln7" rowHeight="60" style="IBUITableViewCellStyleDefault" id="J39-eD-OPe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" textLabel="pFU-Po-ln7" rowHeight="60" style="IBUITableViewCellStyleDefault" id="J39-eD-OPe">
                                 <rect key="frame" x="0.0" y="110" width="393" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J39-eD-OPe" id="h06-Ek-TgN">
@@ -183,7 +184,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ckQ-RP-9f6"/>
+        <segue reference="ZiN-zM-1Xd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">
