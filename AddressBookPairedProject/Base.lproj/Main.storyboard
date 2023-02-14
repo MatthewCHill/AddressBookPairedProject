@@ -140,6 +140,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favoriteButton" destination="jed-qV-fUU" id="D8e-F7-Mfi"/>
+                                    <outlet property="personNameLabel" destination="WZc-R3-Iu3" id="yOb-lC-zhP"/>
                                     <segue destination="k6Q-4J-4cR" kind="show" identifier="toPersonViewController" id="5Y1-D6-Ljo"/>
                                 </connections>
                             </tableViewCell>

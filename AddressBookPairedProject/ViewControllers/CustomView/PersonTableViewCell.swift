@@ -9,15 +9,31 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Properties
+    var person: Person? {
+        didSet {
+            updateViews()
+            updateFavoriteButton()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var personNameLabel: UILabel!
+    
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    // MARK: - Helper Functions
+    func updateViews() {
+        guard let person = person else {return}
+        personNameLabel.text = person.name
     }
+    func updateFavoriteButton() {
+        guard let person = person else {return}
+        let favoriteImageName = person.isFavorite ? "star.fill" : "star"
+        let favoriteImage = UIImage(systemName: favoriteImageName)
+        favoriteButton.setImage(favoriteImage, for: .normal)
+    }
+    
 
 }
