@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34794482299C37CA00F05854 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34794481299C37CA00F05854 /* PersonTableViewCell.swift */; };
 		34C15DAE299ADD840036D3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C15DAD299ADD840036D3AA /* AppDelegate.swift */; };
 		34C15DB0299ADD840036D3AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C15DAF299ADD840036D3AA /* SceneDelegate.swift */; };
 		34C15DB5299ADD840036D3AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C15DB3299ADD840036D3AA /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34794481299C37CA00F05854 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		34C15DAA299ADD840036D3AA /* AddressBookPairedProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookPairedProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C15DAD299ADD840036D3AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34C15DAF299ADD840036D3AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34794483299C37CE00F05854 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				34794481299C37CA00F05854 /* PersonTableViewCell.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		34C15DA1299ADD840036D3AA = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 				34C15DCD299B00000036D3AA /* GroupsTableViewController.swift */,
 				34C15DCF299B120C0036D3AA /* PersonTableViewController.swift */,
 				34C15DD1299B4A010036D3AA /* PersonViewController.swift */,
+				34794483299C37CE00F05854 /* CustomView */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +207,7 @@
 				34C15DCE299B00000036D3AA /* GroupsTableViewController.swift in Sources */,
 				34C15DCB299AF5E60036D3AA /* GroupContoller.swift in Sources */,
 				34C15DD2299B4A010036D3AA /* PersonViewController.swift in Sources */,
+				34794482299C37CA00F05854 /* PersonTableViewCell.swift in Sources */,
 				34C15DC6299AE8310036D3AA /* Group.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
