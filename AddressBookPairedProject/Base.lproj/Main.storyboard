@@ -93,6 +93,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="clL-ew-ya5">
                                                     <rect key="frame" x="312" y="0.0" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="peopleFilterToggle:" destination="ka1-Vb-Q5S" eventType="valueChanged" id="kS0-Mu-H1Y"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </stackView>
@@ -163,6 +166,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="groupNameTextField" destination="f3Z-01-Tff" id="Yyb-6u-Cy2"/>
+                        <outlet property="peopleFilterSwitch" destination="clL-ew-ya5" id="djz-Ij-RH1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ei-9b-Dih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

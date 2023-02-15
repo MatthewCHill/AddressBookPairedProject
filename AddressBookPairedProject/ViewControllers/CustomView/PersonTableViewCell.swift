@@ -33,6 +33,7 @@ class PersonTableViewCell: UITableViewCell {
     func updateViews() {
         guard let person = person else {return}
         personNameLabel.text = person.name
+        updateFavoriteButton()
     }
     func updateFavoriteButton() {
         guard let person = person else {return}

@@ -16,7 +16,7 @@ class PersonController {
     // MARK: - CRUD Functions
     
     static func createPerson(name: String = "New Contact", address: String = "", group: Group) {
-        var person = Person(name: name, address: address)
+        let person = Person(name: name, address: address)
         group.people.append(person)
         GroupController.sharedInstance.saveContactsToDisk()
     }

@@ -12,7 +12,16 @@ class PersonTableViewController: UITableViewController {
 
     @IBOutlet weak var groupNameTextField: UITextField!
     
+    @IBOutlet weak var peopleFilterSwitch: UISwitch!
     var group: Group?
+    
+    private var filteredPeople: [Person] {
+            if peopleFilterSwitch.isOn {
+                return group?.people.filter { $0.isFavorite } ?? []
+            } else {
+                return group?.people ?? []
+            }
+        }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -37,24 +46,25 @@ class PersonTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-
+    @IBAction func peopleFilterToggle(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return group?.people.count ?? 0
+        return filteredPeople.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        
-        guard let group = group else {return UITableViewCell()}
-        let personObject = group.people[indexPath.row]
-        var config = cell.defaultContentConfiguration()
-        config.text = personObject.name
-        cell.contentConfiguration = config
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell else {return UITableViewCell()}
+                
+        let personObject = filteredPeople[indexPath.row]
+        cell.person = personObject
+        cell.delegate = self
         // Configure the cell...
 
         return cell
@@ -64,7 +74,7 @@ class PersonTableViewController: UITableViewController {
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+        
         return true
     }
     
@@ -75,8 +85,10 @@ class PersonTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             guard let group = group else {return}
-            let person = group.people[indexPath.row]
-            PersonController.delete(personToDelete: person, from: group)
+//            let person = group.people[indexPath.row]
+//            PersonController.delete(personToDelete: person, from: group)
+             let filteredperson = filteredPeople[indexPath.row]
+            PersonController.delete(personToDelete: filteredperson, from: group)
             tableView.deleteRows(at: [indexPath], with: .fade)
        
         }    
@@ -106,10 +118,19 @@ class PersonTableViewController: UITableViewController {
         if segue.identifier == "toPersonViewController" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 if let destinationVC = segue.destination as? PersonViewController {
-                    let personToSend = group?.people[indexPath.row]
+                    let personToSend = filteredPeople[indexPath.row]
                     destinationVC.person = personToSend
                 }
             }
         }
     }
+}
+extension PersonTableViewController: PersonTableViewCellDelegate {
+    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
+        guard let person = cell.person else {return}
+        PersonController.toggleFavorite(person: person)
+        tableView.reloadData()
+    }
+    
+
 }
